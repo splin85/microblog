@@ -1,9 +1,12 @@
-<html>
-    <head>
-        <title>{{title}} - microblog</title>
-    </head>
-    <body>
-        <div>Microblog: <a href="./index">Home</a></div>
-        <h1>Hello, {{user}}!</h1>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Hi, {{user}}!</h1>
+{% for post in posts %}
+<div>
+    <p>{{post.author.nickname}} says: <b>{{post.body}}</b></p>
+</div>
+{% endfor %}
+{% endblock %}
+{% block mail %}
+<p> 2018-10-13 @chengdu</p>
+{% endblock %}
